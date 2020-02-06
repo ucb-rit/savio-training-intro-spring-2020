@@ -9,7 +9,7 @@ We'll do this mostly as a demonstration. We encourage you to login to your accou
 
 Much of this material is based on the extensive Savio documention we have prepared and continue to prepare, available at [http://research-it.berkeley.edu/services/high-performance-computing](http://research-it.berkeley.edu/services/high-performance-computing).
 
-The materials for this tutorial are available using git at the short URL [https://tinyurl.com/brc-sep20](https://tinyurl.com/brc-sep20), the  GitHub URL [https://github.com/ucb-rit/savio-training-intro-spring-2020](https://github.com/ucb-rit/savio-training-intro-spring-2020), or simply as a [zip file](https://github.com/ucb-rit/savio-training-intro-spring-2020/archive/master.zip).
+The materials for this tutorial are available using git at the short URL ([https://tinyurl.com/brc-feb20](https://tinyurl.com/brc-feb20)), the  GitHub URL ([https://github.com/ucb-rit/savio-training-intro-spring-2020](https://github.com/ucb-rit/savio-training-intro-spring-2020)), or simply as a [zip file](https://github.com/ucb-rit/savio-training-intro-spring-2020/archive/master.zip).
 
 # Outline
 
@@ -103,7 +103,7 @@ are available from any of the nodes and changes to files on one node will be see
 
 When reading/writing data to/from disk, unless the amount of data is small, please put the data in your scratch space at `/global/scratch/SAVIO_USERNAME`. The system is set up so that disk access for all users is optimized when users are doing input/output (I/O) off of scratch rather than off of their home directories. Doing I/O with files on your home directory can impact the ability of others to access their files on the filesystem. 
 
-Large amounts of disk space is available for purchase from the [*condo storage* offering](http://research-it.berkeley.edu/services/high-performance-computing/brc-condo-storage-service-savio). The minimum purchase is about $6,200, which provides roughly 42 TB for five years.
+Large amounts of disk space is available for purchase from the [*condo storage* offering](http://research-it.berkeley.edu/services/high-performance-computing/brc-condo-storage-service-savio). The minimum purchase is about $5,840, which provides roughly 42 TB for five years.
 
 
 # Logging in
@@ -455,7 +455,7 @@ srun -A co_stat -p savio2 --qos=savio_lowprio --nodes=20 -t 10:00 --pty bash
 env | grep SLURM
 ```
 
-# HTC jobs
+# HTC jobs (and long-running jobs)
 
 There is a partition called the HTC partition that allows you to request cores individually rather than an entire node at a time. The nodes in this partition are faster than the other nodes.
 
@@ -467,6 +467,8 @@ module load python
 python calc.py >& calc.out &
 top
 ```
+
+One can run jobs up to 10 days (using four or fewer cores) in this partition if you include `--qos=savio_long`.
 
 # Alternatives to the HTC partition for collections of serial jobs
  
@@ -510,7 +512,7 @@ We provide some [tips about monitoring your jobs](http://research-it.berkeley.ed
 If you'd like to see how much of an FCA has been used:
 
 ```
-check_usage.sh -a fc_ribosome 
+check_usage.sh -a fc_cuore
 ```
 
 

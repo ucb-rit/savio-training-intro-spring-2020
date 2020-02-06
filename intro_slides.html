@@ -63,7 +63,7 @@ February 10, 2020
 <h1>Introduction</h1>
 <p>We'll do this mostly as a demonstration. We encourage you to login to your account and try out the various examples yourself as we go through them.</p>
 <p>Much of this material is based on the extensive Savio documention we have prepared and continue to prepare, available at <a href="http://research-it.berkeley.edu/services/high-performance-computing" class="uri">http://research-it.berkeley.edu/services/high-performance-computing</a>.</p>
-<p>The materials for this tutorial are available using git at the short URL <a href="https://tinyurl.com/brc-sep20" class="uri">https://tinyurl.com/brc-sep20</a>, the GitHub URL <a href="https://github.com/ucb-rit/savio-training-intro-spring-2020" class="uri">https://github.com/ucb-rit/savio-training-intro-spring-2020</a>, or simply as a <a href="https://github.com/ucb-rit/savio-training-intro-spring-2020/archive/master.zip">zip file</a>.</p>
+<p>The materials for this tutorial are available using git at the short URL (<a href="https://tinyurl.com/brc-feb20" class="uri">https://tinyurl.com/brc-feb20</a>), the GitHub URL (<a href="https://github.com/ucb-rit/savio-training-intro-spring-2020" class="uri">https://github.com/ucb-rit/savio-training-intro-spring-2020</a>), or simply as a <a href="https://github.com/ucb-rit/savio-training-intro-spring-2020/archive/master.zip">zip file</a>.</p>
 </div>
 <div id="outline" class="slide section level1">
 <h1>Outline</h1>
@@ -172,7 +172,7 @@ February 10, 2020
 </ul>
 <p>are available from any of the nodes and changes to files on one node will be seen on all the other nodes.</p>
 <p>When reading/writing data to/from disk, unless the amount of data is small, please put the data in your scratch space at <code>/global/scratch/SAVIO_USERNAME</code>. The system is set up so that disk access for all users is optimized when users are doing input/output (I/O) off of scratch rather than off of their home directories. Doing I/O with files on your home directory can impact the ability of others to access their files on the filesystem.</p>
-<p>Large amounts of disk space is available for purchase from the <a href="http://research-it.berkeley.edu/services/high-performance-computing/brc-condo-storage-service-savio"><em>condo storage</em> offering</a>. The minimum purchase is about $6,200, which provides roughly 42 TB for five years.</p>
+<p>Large amounts of disk space is available for purchase from the <a href="http://research-it.berkeley.edu/services/high-performance-computing/brc-condo-storage-service-savio"><em>condo storage</em> offering</a>. The minimum purchase is about $5,840, which provides roughly 42 TB for five years.</p>
 </div>
 <div id="logging-in" class="slide section level1">
 <h1>Logging in</h1>
@@ -426,8 +426,8 @@ srun -A co_stat -p savio2 --qos=savio_lowprio --nodes=20 -t 10:00 --pty bash
 ## now look at environment variables to see my job can access 20 nodes:
 env | grep SLURM</code></pre>
 </div>
-<div id="htc-jobs" class="slide section level1">
-<h1>HTC jobs</h1>
+<div id="htc-jobs-and-long-running-jobs" class="slide section level1">
+<h1>HTC jobs (and long-running jobs)</h1>
 <p>There is a partition called the HTC partition that allows you to request cores individually rather than an entire node at a time. The nodes in this partition are faster than the other nodes.</p>
 <pre><code>srun -A co_stat -p savio2_htc --cpus-per-task=2 -t 10:00 --pty bash
 ## we can look at environment variables to verify our two cores
@@ -435,6 +435,7 @@ env | grep SLURM
 module load python
 python calc.py &gt;&amp; calc.out &amp;
 top</code></pre>
+<p>One can run jobs up to 10 days (using four or fewer cores) in this partition if you include <code>--qos=savio_long</code>.</p>
 </div>
 <div id="alternatives-to-the-htc-partition-for-collections-of-serial-jobs" class="slide section level1">
 <h1>Alternatives to the HTC partition for collections of serial jobs</h1>
@@ -465,7 +466,7 @@ sinfo -p savio2_gpu</code></pre>
 <pre><code>squeue -o &quot;%.7i %.12P %.20j %.8u %.2t %.9M %.5C %.8r %.3D %.20R %.8p %.20q %b&quot; </code></pre>
 <p>We provide some <a href="http://research-it.berkeley.edu/services/high-performance-computing/running-your-jobs#Monitoring">tips about monitoring your jobs</a>.</p>
 <p>If you'd like to see how much of an FCA has been used:</p>
-<pre><code>check_usage.sh -a fc_ribosome </code></pre>
+<pre><code>check_usage.sh -a fc_cuore</code></pre>
 </div>
 <div id="example-use-of-standard-software-ipython-and-r-notebooks-through-jupyterhub" class="slide section level1">
 <h1>Example use of standard software: IPython and R notebooks through JupyterHub</h1>
