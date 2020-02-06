@@ -1,6 +1,6 @@
 % Savio introductory training: Basic usage of the Berkeley Savio high-performance computing cluster
-% September 19, 2019
-% Christopher Hann-Soden and Chris Paciorek
+% February 10, 2020
+% James Duncan and Chris Paciorek
 
 
 # Introduction
@@ -9,7 +9,7 @@ We'll do this mostly as a demonstration. We encourage you to login to your accou
 
 Much of this material is based on the extensive Savio documention we have prepared and continue to prepare, available at [http://research-it.berkeley.edu/services/high-performance-computing](http://research-it.berkeley.edu/services/high-performance-computing).
 
-The materials for this tutorial are available using git at the short URL [https://tinyurl.com/brc-sep19](https://tinyurl.com/brc-sep19), the  GitHub URL [https://github.com/ucb-rit/savio-training-intro-fall-2019](https://github.com/ucb-rit/savio-training-intro-fall-2019), or simply as a [zip file](https://github.com/ucb-rit/savio-training-intro-fall-2019/archive/master.zip).
+The materials for this tutorial are available using git at the short URL [https://tinyurl.com/brc-sep20](https://tinyurl.com/brc-sep20), the  GitHub URL [https://github.com/ucb-rit/savio-training-intro-spring-2020](https://github.com/ucb-rit/savio-training-intro-spring-2020), or simply as a [zip file](https://github.com/ucb-rit/savio-training-intro-spring-2020/archive/master.zip).
 
 # Outline
 
@@ -724,17 +724,16 @@ We're also including some articles and documentation that may be helpful in gett
     - brc-hpc-help@berkeley.edu
  - For questions about computing resources in general, including cloud computing: 
     - brc@berkeley.edu
-    - office hours: Wed. 1:30-3:30 and Thur. 9:30-11:00 here in AIS
+    - office hours: Wed. 1:30-3:00 and Thur. 9:30-11:00 here in AIS
  - For questions about data management (including HIPAA-protected data): 
     - researchdata@berkeley.edu
-    - office hours: Wed. 1:30-3:30 and Thur. 9:30-11:00 here in AIS
+    - office hours: Wed. 1:30-3:00 and Thur. 9:30-11:00 here in AIS
 
 # Upcoming events and hiring
 
+ - Lots of other events at Berkeley this week during [Love Data Week](https://guides.lib.berkeley.edu/ldw2020).
  
- - Research IT is  developing tools and services to help researchers work with sensitive data
-   - Open house / training (including training on secure data on Savio) on Tuesday, October 22 at 3pm. 
-
+ - We're planning a training on basic principles of and use of parallelization on Savio and similar systems for sometime in April.
 
  - Research IT is hiring graduate students as domain consultants. See flyers or talk to one of us.
 
