@@ -475,7 +475,7 @@ sinfo -p savio2_gpu</code></pre>
 <ul>
 <li>Connect to https://jupyter.brc.berkeley.edu</li>
 <li>Login as usual with a one-time password</li>
-<li>Select how to run your notebook (on a test node or in the <code>savio2_htc</code>, <code>savio</code> or <code>savio2</code> partitions)</li>
+<li>Select how to run your notebook (on our stand-alone Jupyter node (<code>Local server</code>) or in the <code>savio2_htc</code>, <code>savio</code> or <code>savio2</code> partitions)</li>
 <li>Start up a notebook</li>
 </ul>
 <p>HOWEVER, the Jupyterhub service sometimes doesn't interact well with the SLURM scheduler causing your notebook not to start and no helpful error messages to be produced. Instead, one can <a href="http://research-it.berkeley.edu/services/high-performance-computing/using-jupyter-notebooks-and-jupyterhub-savio">run a Jupyter notebook through the visualization node</a> (see the material at the bottom of the webpage).</p>
@@ -483,7 +483,7 @@ sinfo -p savio2_gpu</code></pre>
 </div>
 <div id="example-use-of-standard-software-python" class="slide section level1">
 <h1>Example use of standard software: Python</h1>
-<p>Let's see a basic example of doing an analysis in Python across multiple cores on multiple nodes. We'll use the airline departure data in <em>bayArea.csv</em>.</p>
+<p>Let's see a basic example of doing an analysis in Python across multiple cores on multiple nodes. We'll use the airline departure data in <a href="https://www.stat.berkeley.edu/share/paciorek/bayArea.csv">bayArea.csv</a>.</p>
 <p>Here we'll use <em>IPython</em> for parallel computing. The example is a bit contrived in that a lot of the time is spent moving data around rather than doing computation, but it should illustrate how to do a few things.</p>
 <p>First we'll install a Python package (pretending it is not already available via the basic python/3.6 module).</p>
 <pre><code>cp bayArea.csv /global/scratch/paciorek/.  # remember to do I/O off scratch
@@ -496,9 +496,10 @@ pip install --user statsmodels</code></pre>
 <p>Now we'll start up a cluster using IPython's parallel tools. To do this across multiple nodes within a SLURM job, it goes like this:</p>
 <pre><code>module load python/3.6 gcc openmpi
 ipcontroller --ip=&#39;*&#39; &amp;
-sleep 10
+sleep 30
+## The next line starts one worker per SLURM task (which should equal the number of cores)
 srun ipengine &amp;
-sleep 20  # wait until all engines have successfully started
+sleep 45  # wait until all engines have successfully started
 cd /global/scratch/paciorek
 ipython</code></pre>
 <p>If we were doing this on a single node, we could start everything up in a single call to <em>ipcluster</em>:</p>

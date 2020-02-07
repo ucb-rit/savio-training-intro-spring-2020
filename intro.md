@@ -524,7 +524,7 @@ Let's see a brief demo of an IPython notebook:
 
  - Connect to https://jupyter.brc.berkeley.edu
  - Login as usual with a one-time password
- - Select how to run your notebook (on a test node or in the `savio2_htc`, `savio` or `savio2` partitions)
+ - Select how to run your notebook (on our stand-alone Jupyter node (`Local server`) or in the `savio2_htc`, `savio` or `savio2` partitions)
  - Start up a notebook
 
 HOWEVER, the Jupyterhub service sometimes doesn't interact well with the SLURM scheduler causing your notebook not to start and no helpful error messages to be produced.  Instead, one can [run a Jupyter notebook through the visualization node](http://research-it.berkeley.edu/services/high-performance-computing/using-jupyter-notebooks-and-jupyterhub-savio) (see the material at the bottom of the webpage).
@@ -533,7 +533,7 @@ You can also run [parallel computations via an IPython notebook](http://research
 
 # Example use of standard software: Python
 
-Let's see a basic example of doing an analysis in Python across multiple cores on multiple nodes. We'll use the airline departure data in *bayArea.csv*.
+Let's see a basic example of doing an analysis in Python across multiple cores on multiple nodes. We'll use the airline departure data in [bayArea.csv](https://www.stat.berkeley.edu/share/paciorek/bayArea.csv).
 
 Here we'll use *IPython* for parallel computing. The example is a bit contrived in that a lot of the time is spent moving data around rather than doing computation, but it should illustrate how to do a few things.
 
@@ -558,9 +558,10 @@ Now we'll start up a cluster using IPython's parallel tools. To do this across m
 ```
 module load python/3.6 gcc openmpi
 ipcontroller --ip='*' &
-sleep 10
+sleep 30
+## The next line starts one worker per SLURM task (which should equal the number of cores)
 srun ipengine &
-sleep 20  # wait until all engines have successfully started
+sleep 45  # wait until all engines have successfully started
 cd /global/scratch/paciorek
 ipython
 ```
