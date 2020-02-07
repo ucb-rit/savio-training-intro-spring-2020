@@ -6,7 +6,7 @@ The main document is `intro.html` (or `intro_slides.html` if you prefer a versio
 
 To directly view the HTML, please [click here](https://htmlpreview.github.io/?https://github.com/ucb-rit/savio-training-intro-spring-2020/blob/master/intro_slides.html).
 
-If you're not familiar with Git or Github you can download the materials as a [zip file](https://github.com/ucb-rit/savio-training-intro-fall-2020/archive/master.zip)
+If you're not familiar with Git or Github you can download the materials as a [zip file](https://github.com/ucb-rit/savio-training-intro-spring-2020/archive/master.zip)
 
 This material is also available at [https://tinyurl.com/brc-feb20](https://tinyurl.com/brc-feb20).
 
