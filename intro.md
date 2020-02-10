@@ -106,6 +106,16 @@ When reading/writing data to/from disk, unless the amount of data is small, plea
 Large amounts of disk space is available for purchase from the [*condo storage* offering](http://research-it.berkeley.edu/services/high-performance-computing/brc-condo-storage-service-savio). The minimum purchase is about $5,840, which provides roughly 42 TB for five years.
 
 
+# Sensitive Data on Savio
+    
+Savio (and AEoD) is P2, P3 (formerly PL1) and NIH dbGap certified.
+
+PIs/faculty must request a P2/P3 project alongside requests for a new FCA/condo allocation. Existing projects can't be converted to P2/P3 projects.
+
+BRC is also working on a platform for highly sensitive data (P4) called SRDC.
+
+More info is available in the slides from Dec. 2019 "Working with Sensitive + Protected Data" workshop: [https://tinyurl.com/srdc-dec2019](https://tinyurl.com/srdc-dec2019)
+
 # Logging in
 
 To login, you need to have software on your own machine that gives you access to a UNIX terminal (command-line) session. These come built-in with Mac (see `Applications -> Utilities -> Terminal`). For Windows, a good option is [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
@@ -723,6 +733,8 @@ We're also including some articles and documentation that may be helpful in gett
 
 # How to get additional help
 
+ - Check the Status and Announcements page:
+    - [https://research-it.berkeley.edu/services/high-performance-computing/status-and-announcements](https://research-it.berkeley.edu/services/high-performance-computing/status-and-announcements)
  - For technical issues and questions about using Savio: 
     - brc-hpc-help@berkeley.edu
  - For questions about computing resources in general, including cloud computing: 
