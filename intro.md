@@ -106,9 +106,9 @@ When reading/writing data to/from disk, unless the amount of data is small, plea
 Large amounts of disk space is available for purchase from the [*condo storage* offering](http://research-it.berkeley.edu/services/high-performance-computing/brc-condo-storage-service-savio). The minimum purchase is about $5,840, which provides roughly 42 TB for five years.
 
 
-# Sensitive Data on Savio
+# Moderately Sensitive Data on Savio
     
-Savio (and AEoD) is P2, P3 (formerly PL1) and NIH dbGap certified.
+Savio (and AEoD) is P2, P3 (formerly PL1) and NIH dbGap certified (non-"notice-triggering" data).
 
 PIs/faculty must request a P2/P3 project alongside requests for a new FCA/condo allocation. Existing projects can't be converted to P2/P3 projects.
 
